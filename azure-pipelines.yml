@@ -13,7 +13,6 @@ trigger:
 pool: AZP-Pool
 
 steps:
-
 - task: UsePythonVersion@0
   displayName: 'Use Python 3.x'
 
