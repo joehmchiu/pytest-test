@@ -1,6 +1,7 @@
 
-queue:
-  name: Hosted Linux Preview
+# Set variables
+variables:
+  adp_path: '/adp'  
 
 trigger:
 - main
