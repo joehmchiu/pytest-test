@@ -3,7 +3,7 @@ queue:
   name: Hosted Linux Preview
 
 trigger:
-- master
+- main
 - develop
 - uat
 - features/*
