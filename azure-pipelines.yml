@@ -14,9 +14,6 @@ trigger:
 pool: AZP-Pool
 
 steps:
-- task: UsePythonVersion@0
-  displayName: 'Use Python 3.x'
-
 - bash: 'pytest --junitxml=$(Build.StagingDirectory)/sample1.xml' 
   workingDirectory: 'test'
   displayName: 'Run test sample1'
