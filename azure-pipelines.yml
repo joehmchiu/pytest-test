@@ -1,0 +1,31 @@
+
+queue:
+  name: Hosted Linux Preview
+
+trigger:
+- master
+- develop
+- uat
+- features/*
+- hotfix/*
+- release/*
+
+# pool:
+pool: AZP-Pool
+
+steps:
+
+- task: UsePythonVersion@0
+  displayName: 'Use Python 3.x'
+  displayName: 'Install a bunch of pip packages.'
+
+- bash: 'pytest --junitxml=$(Build.StagingDirectory)/sample1.xml' 
+  workingDirectory: 'test'
+  displayName: 'Run test sample1'
+
+- task: PublishTestResults@2
+  displayName: 'Publish test result sample1.xml'
+  inputs:
+    testResultsFiles: '$(Build.StagingDirectory)/sample1.xml'
+    testRunTitle: Sample1
+
