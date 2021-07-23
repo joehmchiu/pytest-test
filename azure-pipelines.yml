@@ -10,14 +10,12 @@ trigger:
 - hotfix/*
 - release/*
 
-# pool:
 pool: AZP-Pool
 
 steps:
 
 - task: UsePythonVersion@0
   displayName: 'Use Python 3.x'
-  displayName: 'Install a bunch of pip packages.'
 
 - bash: 'pytest --junitxml=$(Build.StagingDirectory)/sample1.xml' 
   workingDirectory: 'test'
