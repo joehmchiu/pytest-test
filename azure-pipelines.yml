@@ -28,7 +28,7 @@ steps:
   #   inputs:
   #     versionSpec: '$(python.version)'
   # 
-- bash: 'pytest --junitxml=$(Build.StagingDirectory)/sample1.xml' 
+- bash: 'pytest -v -p no:warnings --junitxml=$(Build.StagingDirectory)/sample1.xml' 
   workingDirectory: 'test'
   displayName: 'Run test sample1'
   continueOnError: true
